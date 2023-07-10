@@ -10,7 +10,7 @@ import HeaderMenu from './HeaderMenu';
 const StyledToolbar = styled(Toolbar)`
     background : #121212;
     min-height : 56px !important;
-    padding : 0 110px !important;
+    padding : 0 99px !important;
     justify-content : space-between;
     & > * {
         padding : 0 16px;
@@ -56,7 +56,8 @@ const Header = () => {
 
     return (
         <div>
-            <AppBar>
+            {/*mui appbar is fix; which breaks flow ; Banner gets hidden beside */}
+            <AppBar position='static'>
                 <StyledToolbar>
                     <Logo src={logoURL} alt="" />
                     <Box onClick={handleClick} >
