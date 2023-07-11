@@ -5,6 +5,7 @@ import { NOWPLAYING_API_URL } from '../constants/constant'
 import { Box, styled } from '@mui/material';
 import Banner from '../components/Banner';
 import UpNext from '../components/UpNext';
+import Slide from '../components/Slide';
 
 //Crousel + UPNEXT for whole page
 const StyledBox = styled(Box)`
@@ -39,6 +40,9 @@ const Home = () => {
                     <Banner movies={movies} />
                     <UpNext movies={movies} />
                 </StyledBox>
+                <Slide movies={movies} />
+                <Slide movies={movies} />
+                <Slide movies={movies} />
             </Box>
 
         </>
