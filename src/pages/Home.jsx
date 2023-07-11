@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Header from '../components/common/Header'
 import { categoryMovies } from '../services/api'
 import { NOWPLAYING_API_URL } from '../constants/constant'
 import { Box, styled } from '@mui/material';
@@ -12,10 +11,6 @@ const StyledBox = styled(Box)`
 display: flex !important; 
 padding : 18px 0;
 `
-
-//UpNext MOvies
-
-
 
 const Home = () => {
     //store response from calling api  in state;
@@ -34,7 +29,6 @@ const Home = () => {
 
     return (
         <>
-            <Header />
             <Box style={{ padding: '0 110px' }}>
                 <StyledBox >
                     <Banner movies={movies} />

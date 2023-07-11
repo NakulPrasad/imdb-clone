@@ -1,11 +1,22 @@
 import React from 'react'
 import Home from './pages/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/common/Header'
+import { routePath } from './constants/routes'
+import CategoryMovies from './pages/CategoryMovies'
+//adding react router dom
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+
+        <Route path={routePath.home} element={<Home />} />
+        <Route path={routePath.categories} element={<CategoryMovies />} />
+        <Route path={routePath.invalid} element={<Home />} />
+      </Routes>
+    </Router>
   )
 }
 
