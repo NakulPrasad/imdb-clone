@@ -18,7 +18,7 @@ const HeaderMenu = ({ open, handleClose }) => {
                 }}
             >
                 {/* wrapining inside Link  */}
-                <Link to={`${routePath.categories}?category=popular`} style={{ textDecoration: 'none', color: 'inherit' }} >
+                <Link to={`${routePath.categories}?category=popular`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <MenuItem onClick={handleClose}>Popular</MenuItem>
                 </Link>
                 <Link to={`${routePath.categories}?category=toprated`} style={{ textDecoration: 'none', color: 'inherit' }}>

@@ -6,6 +6,7 @@ import { logoURL } from '../../constants/constant';
 
 //components
 import HeaderMenu from './HeaderMenu';
+import { Link } from 'react-router-dom';
 
 const StyledToolbar = styled(Toolbar)`
     background : #121212;
@@ -59,7 +60,10 @@ const Header = () => {
             {/*mui appbar is fix; which breaks flow ; Banner gets hidden beside */}
             <AppBar position='static'>
                 <StyledToolbar>
-                    <Logo src={logoURL} alt="" />
+                    <Link to={'/'}>
+                        <Logo src={logoURL} alt="" />
+
+                    </Link>
                     <Box onClick={handleClick} >
                         <Menu />
                         <Typography>Menu </Typography>

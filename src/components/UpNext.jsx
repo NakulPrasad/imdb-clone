@@ -36,7 +36,13 @@ const UpNext = ({ movies }) => {
                                 alt="poster"
 
                             />
-                            <Typography>{movie.original_title}</Typography>
+                            <Box style={{ marginLeft: 8 }}>
+                                <Typography>{movie.original_title}</Typography>
+                                <Typography style={{ height: 66, overflow: 'hidden', fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>{movie.overview}</Typography>
+
+                            </Box>
+
+
                         </StyledBox2>
                     );
                 })

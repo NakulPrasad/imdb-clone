@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import Carousel from "react-multi-carousel";
 
-const Slide = ({ movies }) => {
+const Slide = ({ movies, title }) => {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -20,7 +20,7 @@ const Slide = ({ movies }) => {
 
     return (
         <Box>
-            <Typography>Featured Today</Typography>
+            <Typography>{title}</Typography>
             <Carousel
                 responsive={responsive}
                 infinite={true}
