@@ -62,7 +62,7 @@ const CategoryMovies = () => {
         },
     };
     return (
-        <Box style={{ padding: '0 110px' }}>
+        <Box style={{ padding: '0 8%' }}>
             <Carousel
                 responsive={responsive}
                 infinite={true}

@@ -35,7 +35,7 @@ const Home = () => {
 
     return (
         <>
-            <Box style={{ padding: '0 110px' }}>
+            <Box style={{ padding: '0 8%' }}>
                 <StyledBox >
                     <Banner movies={movies} />
                     <UpNext movies={movies} />
