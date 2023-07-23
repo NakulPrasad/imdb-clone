@@ -13,3 +13,32 @@ body {
 p {
   color: white;
 }
+
+
+/* Works on Firefox */
+body::-webkit-scrollbar {
+  width: 16px;
+  scrollbar-width: thin;
+  /* "auto" or "thin"  */
+  scrollbar-color: #888 #333;
+  /* scrollbar color, scrollbar track color */
+}
+
+/* Works on Chrome, Edge, and Safari */
+body::-webkit-scrollbar {
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #333;
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid #333;
+  /* creates padding around scroll thumb */
+}
