@@ -9,6 +9,8 @@ import { Box, styled } from "@mui/material";
 import Banner from "../components/Banner";
 import UpNext from "../components/UpNext";
 import Slide from "../components/Slide";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Header from "../components/common/Header";
 
 //Crousel + UPNEXT for whole page
 const StyledBox = styled(Box)`
@@ -17,6 +19,7 @@ const StyledBox = styled(Box)`
 `;
 
 const Home = () => {
+  const mobile = useMediaQuery(" (max-width : 768px) ");
   //store response from calling api  in state;
   const [movies, setMovies] = useState([]);
   const [moviesTop, setMoviesTop] = useState([]);
@@ -39,11 +42,13 @@ const Home = () => {
 
   return (
     <>
-      <Box style={{ padding: "0 8%" }}>
-        <StyledBox>
+      <Box style={{ padding: !mobile ? "0 8%" : 0 }}>
+        <Header />
+        <StyledBox sx={{ flexDirection: mobile ? "column" : "row" }}>
           <Banner movies={movies} />
           <UpNext movies={movies} />
         </StyledBox>
+
         <Slide movies={movies} title={"Featured Today"} />
         <Slide movies={moviesTop} title={"Greatest All Time"} />
         <Slide movies={moviesUp} title={"Up Coming "} />

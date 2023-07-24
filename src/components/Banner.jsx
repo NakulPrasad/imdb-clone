@@ -3,7 +3,12 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 const Banner = ({ movies }) => {
+  const mobile = useMediaQuery(" (max-width : 768px) ");
+  console.log(mobile);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -20,7 +25,11 @@ const Banner = ({ movies }) => {
   };
 
   return (
-    <Box style={{ width: "65%" }}>
+    <Box
+      style={{
+        width: mobile ? "100%" : "65%",
+      }}
+    >
       <Carousel
         responsive={responsive}
         infinite={true}

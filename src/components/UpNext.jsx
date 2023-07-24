@@ -1,15 +1,13 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, Typography, styled, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const StyledBox = styled(Box)`
-  width: 35%;
-  padding-left: 18px;
   display: flex;
   flex-direction: column;
   align-items: baseline;
   & > p {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 3vh;
     margin-bottom: 10px;
     color: #f5c518;
   }
@@ -22,16 +20,22 @@ const StyledBox2 = styled(Box)`
 `;
 
 const UpNext = ({ movies }) => {
+  const mobile = useMediaQuery(" (max-width : 768px) ");
   // console.log(movies);
   const navigate = useNavigate();
   return (
-    <StyledBox>
+    <StyledBox
+      sx={{
+        width: mobile ? "100%" : "35%",
+        paddingLeft: !mobile ? "18px" : 0,
+      }}
+    >
       <Typography>Up Next</Typography>
       {movies.splice(0, 3).map(function (movie) {
         return (
           <StyledBox2
             key={movie.id}
-            sx={{ cursor: "pointer" }}
+            sx={{ cursor: "pointer", padding: mobile ? "2vh 0%" : "0 0%" }}
             onClick={() => navigate(`/movie/${movie.id}`)}
           >
             <img

@@ -42,3 +42,7 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid #333;
   /* creates padding around scroll thumb */
 }
+
+.MuiToolbar-root MuiToolbar-gutters {
+  padding: 0 0;
+}

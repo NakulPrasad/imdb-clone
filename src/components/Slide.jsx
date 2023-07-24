@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import dayjs from "dayjs";
@@ -21,9 +21,17 @@ const Slide = ({ movies, title }) => {
   };
 
   const navigate = useNavigate();
+  const mobile = useMediaQuery(" (max-width : 768px) ");
   return (
     <Box sx={{ m: "0 0 20 0" }}>
-      <Typography style={{ color: "#F5C518", fontSize: 20, fontWeight: 600 }}>
+      <Typography
+        style={{
+          color: "#F5C518",
+          fontSize: "3vh",
+          fontWeight: 600,
+          padding: mobile ? "1vh 0%" : "0 0%",
+        }}
+      >
         {title}
       </Typography>
       <Carousel
