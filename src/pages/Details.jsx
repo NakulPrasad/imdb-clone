@@ -3,15 +3,16 @@ import { useParams } from "react-router-dom";
 import { MOVIEDETAILS_API_URL } from "../constants/constant";
 import { fetchDataAPI } from "../services/api";
 import DetailsBanner from "../components/DetailsBanner";
-import { Box, styled } from "@mui/material";
+import { Box, styled, useMediaQuery } from "@mui/material";
 import DetailsText from "../components/DetailsText";
+import Header from "../components/common/Header";
 
 const StyledBox = styled(Box)`
-  display: flex !important;
-  padding: 5vw 8% !important;
+  display: flex;
 `;
 
 const Details = () => {
+  const mobile = useMediaQuery(" (min-width : 1080px) ");
   const { id } = useParams();
   const [movieDetails, setmovieDetails] = useState([]);
 
@@ -26,10 +27,20 @@ const Details = () => {
   }, [id]); // id is added in the dependency array
 
   return (
-    <StyledBox>
-      <DetailsBanner movie={movieDetails} />
-      <DetailsText movie={movieDetails} />
-    </StyledBox>
+    <>
+      <Box sx={{ padding: !mobile ? "0 7.5%" : 0 }}>
+        <Header />
+      </Box>
+      <StyledBox
+        sx={{
+          flexDirection: mobile ? "column" : "row",
+          padding: !mobile ? "5vw 8%" : 0,
+        }}
+      >
+        <DetailsBanner movie={movieDetails} />
+        <DetailsText movie={movieDetails} />
+      </StyledBox>
+    </>
   );
 };
 

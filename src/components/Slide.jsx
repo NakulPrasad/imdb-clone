@@ -11,7 +11,7 @@ const Slide = ({ movies, title }) => {
       items: 6,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1080, min: 464 },
       items: 3,
     },
     mobile: {
@@ -21,7 +21,7 @@ const Slide = ({ movies, title }) => {
   };
 
   const navigate = useNavigate();
-  const mobile = useMediaQuery(" (max-width : 768px) ");
+  const mobile = useMediaQuery(" (min-width : 1080px) ");
   return (
     <Box sx={{ m: "0 0 20 0" }}>
       <Typography

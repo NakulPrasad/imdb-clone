@@ -10,6 +10,8 @@ import {
   movieType,
 } from "../constants/constant";
 import MovieList from "../components/MovieList";
+import Header from "../components/common/Header";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const StyledBox = styled(Box)`
   background: #f5f5f5;
@@ -62,6 +64,7 @@ const CategoryMovies = () => {
   };
   return (
     <Box style={{ padding: "0 8%" }}>
+      <Header />;
       <Carousel
         responsive={responsive}
         infinite={true}

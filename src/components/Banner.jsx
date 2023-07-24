@@ -6,7 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Banner = ({ movies }) => {
-  const mobile = useMediaQuery(" (max-width : 768px) ");
+  const mobile = useMediaQuery(" (max-width : 1080px) ");
   console.log(mobile);
 
   const responsive = {

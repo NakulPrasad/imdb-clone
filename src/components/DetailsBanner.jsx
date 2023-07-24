@@ -1,9 +1,10 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 
 const DetailsBanner = ({ movie }) => {
+  const mobile = useMediaQuery(" (max-width : 768px) ");
   return (
-    <Box style={{ width: "20%" }} key={movie.id}>
+    <Box style={{ width: !mobile ? "20%" : "100%" }} key={movie.id}>
       <img
         key={movie.id}
         src={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}

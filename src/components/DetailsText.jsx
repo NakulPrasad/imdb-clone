@@ -1,9 +1,7 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 
 const StyledBox = styled(Box)`
-  width: 70%;
-  padding-left: 18px;
   display: flex;
   flex-direction: column;
   align-items: baseline;
@@ -15,9 +13,15 @@ const StyledBox = styled(Box)`
 `;
 
 const DetailsText = ({ movie }) => {
+  const mobile = useMediaQuery(" (max-width : 768px) ");
   return (
     <>
-      <StyledBox>
+      <StyledBox
+        sx={{
+          width: mobile ? "100%" : "70%",
+          padding: mobile ? "0 0 3vh 3px" : "0 0 0 18px",
+        }}
+      >
         <Typography variant="h3" sx={{ color: "#f5c518" }}>
           {movie.title}
         </Typography>

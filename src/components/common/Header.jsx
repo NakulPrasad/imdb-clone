@@ -17,14 +17,12 @@ import HeaderMenu from "./HeaderMenu";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const mobile = useMediaQuery(" (max-width : 480px) ");
+  const mobile = useMediaQuery(" (max-width : 1080px) ");
   const StyledToolbar = styled(Toolbar)`
     background: #121212;
 
     justify-content: space-between;
-    & > * {
-      padding: 0 16px;
-    }
+
     & > div {
       display: flex;
       align-items: center;
@@ -61,13 +59,13 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <Box>
       {/*mui appbar is fix; which breaks flow ; Banner gets hidden beside */}
       <AppBar position="static">
         <StyledToolbar
           sx={{
-            padding: mobile ? "0 0" : "0 96px",
-            minHeight: mobile ? "35px" : "56px",
+            padding: mobile ? "2vh 0" : "0 0",
+            minHeight: "56px",
           }}
         >
           <Link to={"/"}>
@@ -88,23 +86,17 @@ const Header = () => {
             IMDb<Box component="span">Pro</Box>{" "}
           </Typography>
           <Box>
-            <BookmarkAdd sx={{ display: mobile ? "none" : "block" }} />
-            <Typography sx={{ display: mobile ? "none" : "block" }}>
-              WatchList
-            </Typography>
+            <BookmarkAdd />
+            <Typography>WatchList</Typography>
           </Box>
-          <Typography sx={{ display: mobile ? "none" : "block" }}>
-            Sign IN
-          </Typography>
+          <Typography>Sign IN</Typography>
           <Box>
-            <Typography sx={{ display: mobile ? "none" : "block" }}>
-              EN
-            </Typography>
-            <ExpandMore sx={{ display: mobile ? "none" : "block" }} />
+            <Typography>EN</Typography>
+            <ExpandMore />
           </Box>
         </StyledToolbar>
       </AppBar>
-    </div>
+    </Box>
   );
 };
 

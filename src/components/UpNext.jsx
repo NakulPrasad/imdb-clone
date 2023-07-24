@@ -20,7 +20,7 @@ const StyledBox2 = styled(Box)`
 `;
 
 const UpNext = ({ movies }) => {
-  const mobile = useMediaQuery(" (max-width : 768px) ");
+  const mobile = useMediaQuery(" (min-width : 1080px) ");
   // console.log(movies);
   const navigate = useNavigate();
   return (

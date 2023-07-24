@@ -43,6 +43,6 @@ body::-webkit-scrollbar-thumb {
   /* creates padding around scroll thumb */
 }
 
-.MuiToolbar-root MuiToolbar-gutters {
+.css-1c9cfkz-MuiToolbar-root {
   padding: 0 0;
 }

@@ -19,7 +19,7 @@ const StyledBox = styled(Box)`
 `;
 
 const Home = () => {
-  const mobile = useMediaQuery(" (max-width : 768px) ");
+  const mobile = useMediaQuery(" (max-width : 1080px) ");
   //store response from calling api  in state;
   const [movies, setMovies] = useState([]);
   const [moviesTop, setMoviesTop] = useState([]);
