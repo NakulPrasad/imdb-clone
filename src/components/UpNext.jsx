@@ -27,7 +27,7 @@ const UpNext = ({ movies }) => {
     <StyledBox
       sx={{
         width: mobile ? "100%" : "35%",
-        paddingLeft: !mobile ? "18px" : 0,
+        paddingLeft: !mobile ? "18px" : "2%",
       }}
     >
       <Typography>Up Next</Typography>
