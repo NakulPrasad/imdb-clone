@@ -2,11 +2,9 @@ import { Box } from "@mui/material";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { isMobile as mobile } from "react-device-detect";
 
 const Banner = ({ movies }) => {
-  const mobile = useMediaQuery(" (max-width : 1080px) ");
   console.log(mobile);
 
   const responsive = {

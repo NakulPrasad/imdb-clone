@@ -10,14 +10,13 @@ import {
 } from "@mui/material";
 import { Menu, BookmarkAdd, ExpandMore } from "@mui/icons-material";
 import { logoURL } from "../../constants/constant";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { isMobile as mobile } from "react-device-detect";
 
 //components
 import HeaderMenu from "./HeaderMenu";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const mobile = useMediaQuery(" (max-width : 1080px) ");
   const StyledToolbar = styled(Toolbar)`
     background: #121212;
 
@@ -76,12 +75,10 @@ const Header = () => {
             <Typography>Menu </Typography>
           </Box>
           {/* sending prop named open */}
-          <HeaderMenu
-            open={open}
-            handleClose={handleClose}
-            sx={{ display: mobile ? "none" : "block" }}
-          />
-          <InputSearchField sx={{ display: mobile ? "none" : "block" }} />
+          <HeaderMenu open={open} handleClose={handleClose} />
+          {mobile ? <></> : <InputSearchField />}
+
+          {console.log(mobile)}
           <Typography sx={{ display: mobile ? "none" : "block" }}>
             IMDb<Box component="span">Pro</Box>{" "}
           </Typography>

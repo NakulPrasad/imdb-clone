@@ -1,6 +1,6 @@
 import { Box, styled, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
-
+import {isMobile as mobile} from 'react-device-detect';
 const StyledBox = styled(Box)`
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ const StyledBox = styled(Box)`
 `;
 
 const DetailsText = ({ movie }) => {
-  const mobile = useMediaQuery(" (max-width : 768px) ");
+  
   return (
     <>
       <StyledBox

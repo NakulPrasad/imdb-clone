@@ -1,5 +1,6 @@
-import { Box, Typography, styled, useMediaQuery } from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { isMobile as mobile } from "react-device-detect";
 
 const StyledBox = styled(Box)`
   display: flex;
@@ -20,7 +21,6 @@ const StyledBox2 = styled(Box)`
 `;
 
 const UpNext = ({ movies }) => {
-  const mobile = useMediaQuery(" (min-width : 1080px) ");
   // console.log(movies);
   const navigate = useNavigate();
   return (

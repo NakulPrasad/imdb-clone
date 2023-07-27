@@ -9,7 +9,7 @@ import { Box, styled } from "@mui/material";
 import Banner from "../components/Banner";
 import UpNext from "../components/UpNext";
 import Slide from "../components/Slide";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { isMobile as mobile } from "react-device-detect";
 import Header from "../components/common/Header";
 
 //Crousel + UPNEXT for whole page
@@ -19,7 +19,6 @@ const StyledBox = styled(Box)`
 `;
 
 const Home = () => {
-  const mobile = useMediaQuery(" (max-width : 1080px) ");
   //store response from calling api  in state;
   const [movies, setMovies] = useState([]);
   const [moviesTop, setMoviesTop] = useState([]);

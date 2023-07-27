@@ -1,5 +1,6 @@
 import { Star } from "@mui/icons-material";
 import { styled, List, ListItem, Divider } from "@mui/material";
+import { isMobile as mobile } from "react-device-detect";
 
 const Container = styled(List)`
   display: flex;

@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, useMediaQuery } from "@mui/material";
+import { isMobile as mobile } from "react-device-detect";
 
 const DetailsBanner = ({ movie }) => {
-  const mobile = useMediaQuery(" (max-width : 768px) ");
   return (
     <Box style={{ width: !mobile ? "20%" : "100%" }} key={movie.id}>
       <img

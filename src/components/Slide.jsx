@@ -3,6 +3,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
+import { isMobile as mobile } from "react-device-detect";
 
 const Slide = ({ movies, title }) => {
   const responsive = {
@@ -21,7 +22,7 @@ const Slide = ({ movies, title }) => {
   };
 
   const navigate = useNavigate();
-  const mobile = useMediaQuery(" (min-width : 1080px) ");
+
   return (
     <Box sx={{ m: "0 0 20 0" }}>
       <Typography
