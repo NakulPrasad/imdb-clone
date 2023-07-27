@@ -43,10 +43,17 @@ const Home = () => {
     <>
       <Box style={{ padding: !mobile ? "0 8%" : 0 }}>
         <Header />
-        <StyledBox sx={{ flexDirection: mobile ? "column" : "row" }}>
-          <Banner movies={movies} />
-          <UpNext movies={movies} />
-        </StyledBox>
+        {mobile ? (
+          <StyledBox sx={{ flexDirection: "column" }}>
+            <Banner movies={movies} />
+            <UpNext movies={movies} />
+          </StyledBox>
+        ) : (
+          <StyledBox sx={{ flexDirection: "row" }}>
+            <Banner movies={movies} />
+            <UpNext movies={movies} />
+          </StyledBox>
+        )}
 
         <Slide movies={movies} title={"Featured Today"} />
         <Slide movies={moviesTop} title={"Greatest All Time"} />
